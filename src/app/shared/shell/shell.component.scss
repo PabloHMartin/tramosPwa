@@ -1,0 +1,38 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 100px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+mat-nav-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mat-toolbar-single-row{
+  justify-content: center;
+}
+.option{
+  margin:1.5em auto;
+}
+
+.option mat-icon{
+  width: 100%;
+  font-size: 3em;
+  color: antiquewhite;
+}
+
+// /deep/ .mat-tooltip {
+//   font-size: .9em;
+// }
+
+.signout{
+  cursor: pointer;
+}
