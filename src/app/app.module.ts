@@ -6,16 +6,31 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page/home-page.component';
+import { TramoActivoComponent } from './home-page/components/tramo-activo/tramo-activo.component';
+import { TramoSubsComponent } from './home-page/components/tramo-subs/tramo-subs.component';
+import { FactsComponent } from './home-page/components/facts/facts.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    TramoActivoComponent,
+    TramoSubsComponent,
+    FactsComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAnalyticsModule,
+    AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     SharedModule
   ],
   providers: [],
