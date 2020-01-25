@@ -6,6 +6,7 @@ import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, Mat
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
+import { DbService } from './services/db.service';
 
 
 
@@ -36,7 +37,7 @@ const modules = [
   ],
   exports: [
     ...components,
-    ...modules
+    ...modules,
   ],
 
 })

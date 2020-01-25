@@ -1,1 +1,6 @@
-<p>home-page works!</p>
+<div *ngIf="tramoData$ | async as tramoData">
+
+  <app-tramo-activo [tramoActivo]=tramoData.tramo[0]></app-tramo-activo>
+  <app-tramo-subs></app-tramo-subs>
+  <app-facts [precioACtivo]=tramoData.tramo[0].precio [facts]=tramoData.facts></app-facts>
+</div>

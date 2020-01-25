@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/shared/services/db.service';
+import { catchError, map } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { TramoPrecioFacts } from 'src/app/shared/models/models';
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  tramoData$ = this.db.tramoPrecioFacts$.pipe<TramoPrecioFacts>(
+    catchError(error => {
+      return of(null);
+    })
+  );
+
+  constructor(public db: DbService) { }
 
   ngOnInit() {
   }
