@@ -1,0 +1,10 @@
+:host{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  .precio{
+    font-size: 2em;
+  }
+}
