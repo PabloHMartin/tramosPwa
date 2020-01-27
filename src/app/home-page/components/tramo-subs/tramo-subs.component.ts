@@ -1,4 +1,6 @@
+import { DbService } from 'src/app/shared/services/db.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tramo-subs',
@@ -6,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tramo-subs.component.scss']
 })
 export class TramoSubsComponent implements OnInit {
+
+  @Input() precio: any;
 
   constructor() { }
 

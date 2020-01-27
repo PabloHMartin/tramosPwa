@@ -1,0 +1,17 @@
+:host{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  .title{
+    font-size: 1.5em;
+  }
+  .subtitle{
+    margin-top: 1em;
+    padding: 0.5em;
+    border: 1px solid white;
+    font-size: 0.7em;
+  }
+
+}

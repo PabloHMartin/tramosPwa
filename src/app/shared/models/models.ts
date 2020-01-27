@@ -1,16 +1,18 @@
 export interface TramoPrecioFacts {
-  tramo: Tramo[];
-  precios: Precios;
-  facts: Fact[];
+  tramo: Tramo & { id: string; };
+  precio: Precio & { id: string; };
+  facts: (Fact & { id: string; })[];
 }
 
 export interface Fact {
+  id: string;
   icon: string;
   potencia: number;
   title: string;
 }
 
 export interface Tramo {
+  id: string;
   activo: boolean;
   inicio: string;
   fin: string;
@@ -18,8 +20,8 @@ export interface Tramo {
   title: string;
 }
 
-export interface Precios {
-  caro: number;
-  medio: number;
-  eco: number;
+export interface Precio {
+  id: string;
+  precio: number;
+  title: string;
 }
