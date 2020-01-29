@@ -6,8 +6,12 @@
   padding-top: 3em;
   margin-bottom: 2em;
   mat-card{
-    width: 90vw;
-    height: 20em;
-    padding: 2.5rem 1em;
+    width: 80vw;
+    height: 4.5rem;
+    padding: 1.5em 1em;
+    margin-bottom: 1em;
+    border-radius: 0px 20px 0px 20px;
+    background-color: #fff;
+    color: rgb(53, 53, 53);
   }
 }
