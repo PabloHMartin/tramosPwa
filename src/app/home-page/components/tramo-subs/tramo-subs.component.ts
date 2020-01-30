@@ -9,7 +9,9 @@ import { map, filter } from 'rxjs/operators';
 })
 export class TramoSubsComponent implements OnInit {
 
-  @Input() precio: any;
+  @Input() precio: string;
+  @Input() horaInicio: any;
+  @Input() horaFin: any;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 <section *ngIf="tramoData$ | async as tramoData" [ngClass]="tramoData.tramo.precio">
 <app-tramo-activo [tramoActivo]="tramoData.tramo" ></app-tramo-activo>
-<app-tramo-subs [precio]="tramoData.precio.precio"></app-tramo-subs>
+<app-tramo-subs [precio]="tramoData.precio.precio" [horaInicio]="tramoData.tramo.inicio" [horaFin]="tramoData.tramo.fin"></app-tramo-subs>
 <app-facts [facts]="tramoData.facts" [precioACtivo]="tramoData.precio.precio"></app-facts>
 </section>
