@@ -1,9 +1,9 @@
 section {
-  height:100vh;
+  height:100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: -2.5em;
 }
 
@@ -13,7 +13,8 @@ section {
 
 }
 .medio{
-  background-image: linear-gradient(135deg, rgb(243, 107, 55) 0%, rgb(243, 107, 55) 23%,rgb(244, 133, 60) 23%, rgb(244, 133, 60) 27%,rgb(245, 159, 64) 27%, rgb(245, 159, 64) 73%,rgb(245, 186, 69) 73%, rgb(245, 186, 69) 74%,rgb(246, 212, 73) 74%, rgb(246, 212, 73) 78%,rgb(247, 238, 78) 78%, rgb(247, 238, 78) 100%);
+  //background-image: linear-gradient(135deg, rgb(243, 107, 55) 0%, rgb(243, 107, 55) 23%,rgb(244, 133, 60) 23%, rgb(244, 133, 60) 27%,rgb(245, 159, 64) 27%, rgb(245, 159, 64) 73%,rgb(245, 186, 69) 73%, rgb(245, 186, 69) 74%,rgb(246, 212, 73) 74%, rgb(246, 212, 73) 78%,rgb(247, 238, 78) 78%, rgb(247, 238, 78) 100%);
+  background-image: linear-gradient(45deg, rgb(252, 209, 5) 0%, rgb(252, 209, 5) 6%,rgb(246, 177, 19) 6%, rgb(246, 177, 19) 19%,rgb(240, 146, 32) 19%, rgb(240, 146, 32) 41%,rgb(235, 114, 46) 41%, rgb(235, 114, 46) 55%,rgb(229, 83, 59) 55%, rgb(229, 83, 59) 94%,rgb(223, 51, 73) 94%, rgb(223, 51, 73) 100%);
   font-family: 'Dosis', sans-serif;
 }
 
