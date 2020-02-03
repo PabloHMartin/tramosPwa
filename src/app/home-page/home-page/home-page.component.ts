@@ -3,7 +3,6 @@ import { DbService } from 'src/app/shared/services/db.service';
 import { catchError, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { TramoPrecioFacts } from 'src/app/shared/models/models';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-page',

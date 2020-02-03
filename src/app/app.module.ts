@@ -13,7 +13,7 @@ import { FactsComponent } from './home-page/components/facts/facts.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/analytics';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,11 @@ import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    // AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    SharedModule
+    SharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
