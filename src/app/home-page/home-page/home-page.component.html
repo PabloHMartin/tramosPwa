@@ -1,5 +1,20 @@
-<section *ngIf="tramoData$ | async as tramoData" [ngClass]="tramoData.tramo.precio">
-<app-tramo-activo [tramoActivo]="tramoData.tramo" ></app-tramo-activo>
-<app-tramo-subs [precio]="tramoData.precio.precio" [horaInicio]="tramoData.tramo.inicio" [horaFin]="tramoData.tramo.fin"></app-tramo-subs>
-<app-facts [facts]="tramoData.facts" [precioACtivo]="tramoData.precio.precio"></app-facts>
+<section class="section" *ngIf="tramoData$ | async as tramoData"
+         [class.section--mobile]="(isHandset$ | async)"
+         [class.section--desktop]="!(isHandset$ | async)"
+         [ngClass]="tramoData.tramo.precio">
+    <div class="info"
+         [class.info--mobile]="(isHandset$ | async)"
+         [class.info--desktop]="!(isHandset$ | async)"
+         >
+           <app-tramo-activo [isHandset]="(isHandset$ | async)" [tramoActivo]="tramoData.tramo" ></app-tramo-activo>
+           <app-tramo-subs [isHandset]="(isHandset$ | async)" [precio]="tramoData.precio.precio"
+           [horaInicio]="tramoData.tramo.inicio"
+           [horaFin]="tramoData.tramo.fin"></app-tramo-subs>
+    </div>
+    <div class="facts"
+         [class.facts--mobile]="(isHandset$ | async)"
+         [class.facts--desktop]="!(isHandset$ | async)"
+    >
+      <app-facts  [isHandset]="(isHandset$ | async)" [facts]="tramoData.facts" [precioACtivo]="tramoData.precio.precio"></app-facts>
+    </div>
 </section>

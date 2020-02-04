@@ -12,12 +12,25 @@ export class FactsComponent implements OnInit {
 
   @Input() facts: Fact[];
   @Input() precioACtivo: string;
+  @Input() isHandset: boolean;
 
   config: SwiperConfigInterface = {
     speed: 300,
     spaceBetween: 15,
     slidesPerView: 2,
     centeredSlides: true
+  };
+
+
+  desktopConfig: SwiperConfigInterface = {
+    speed: 300,
+    spaceBetween: 15,
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   };
 
   constructor() { }

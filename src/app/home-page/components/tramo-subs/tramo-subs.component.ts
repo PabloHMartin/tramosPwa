@@ -12,6 +12,7 @@ export class TramoSubsComponent implements OnInit {
   @Input() precio: string;
   @Input() horaInicio: any;
   @Input() horaFin: any;
+  @Input() isHandset: boolean;
 
   constructor() { }
 

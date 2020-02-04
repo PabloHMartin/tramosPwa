@@ -1,10 +1,46 @@
-section {
+.section {
   height:100%;
   display: flex;
+  &--mobile{
+    margin-top: -2.5em;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+  }
+  &--desktop{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+
+
+.info{
+  display: flex;
   flex-direction: column;
-  align-items: stretch;
+  &--mobile{
+    height: 50vh;
+    justify-content: space-around;
+  }
+  &--desktop{
+    height: 90vh;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+}
+
+.facts{
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin-top: -2.5em;
+  &--mobile{
+    height: 50vh;
+  }
+  &--desktop{
+    height: 90vh;
+    width: 50%;
+    padding: .5em 3em;
+  }
 }
 
 .eco{

@@ -1,11 +1,19 @@
-<swiper [config]="config">
-  <div *ngFor="let fact of facts">
-    <mat-card>
+<section class="section"
+         [class.section--desktop]="!isHandset">
+  <swiper [config]="isHandset ? config : desktopConfig">
+    <div *ngFor="let fact of facts">
+
+    <mat-card class="mat-card"
+    [class.mat-card--mobile]="isHandset"
+    [class.mat-card--desktop]="!isHandset">
         <img src="../../../../assets/img/{{fact.icon}}.svg">
         <p class="info">
         {{fact.minutos}} minutos de {{fact.title}} tienen un coste de {{calculoPrecio(fact.potencia, precioACtivo, fact.minutos) | number:'1.2-2'}}
         </p>
-    </mat-card>
+    </mat-card
+    >
   </div>
 </swiper>
-
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</section>

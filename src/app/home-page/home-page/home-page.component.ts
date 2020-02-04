@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/shared/services/db.service';
 import { catchError, map, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { of, Observable } from 'rxjs';
 import { TramoPrecioFacts } from 'src/app/shared/models/models';
 
 @Component({
@@ -17,7 +18,13 @@ export class HomePageComponent implements OnInit {
     })
   );
 
-  constructor(public db: DbService) { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+
+
+  constructor(public db: DbService, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
   }

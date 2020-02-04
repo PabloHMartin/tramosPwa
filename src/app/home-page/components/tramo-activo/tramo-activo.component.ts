@@ -9,6 +9,7 @@ import { Tramo } from 'src/app/shared/models/models';
 export class TramoActivoComponent implements OnInit {
 
   @Input() tramoActivo: Tramo;
+  @Input() isHandset: boolean;
 
   constructor() { }
 

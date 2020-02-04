@@ -1,24 +1,40 @@
 :host{
 
-  mat-card{
-    width: 38vw;
-    height: 12rem;
-    padding: 2em 1em;
-    margin-bottom: 1em;
-    border-radius: 20px 80px 20px 20px;
-    background-color: #fff;
-    color: rgb(53, 53, 53);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Dosis', sans-serif;
-    & img{
-      width: 2em;
-      height: 2em;
+  .section{
+
+    &--desktop {
+      padding-top: 4em;
     }
-    & p {
-      font-size: 1.2em;
-      font-weight: 800;
+
+    .mat-card{
+      border-radius: 20px 80px 20px 20px;
+      background-color: #fff;
+      color: rgb(53, 53, 53);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Dosis', sans-serif;
+
+      &--mobile{
+        height: 12rem;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-right: 2em;
+        margin-bottom: 1em;
+      }
+
+      &--desktop{
+        height: 10rem;
+        margin-bottom: 3em;
+      }
+      & img{
+        width: 2em;
+        height: 2em;
+      }
+      & p {
+        font-size: 1.2em;
+        font-weight: 800;
+      }
     }
   }
 }

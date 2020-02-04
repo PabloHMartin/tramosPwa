@@ -1,10 +1,15 @@
-<div class="horario">
+<div class="precio"
+     [class.precio--desktop]="!isHandset">
+  {{precio}}€/Kwh
+  </div>
+
+<div class="horario"
+     [class.horario--mobile]="isHandset"
+     [class.horario--desktop]="!isHandset"
+     >
   <div>{{horaInicio}}</div>
-  <div></div>
+  <div [class.spacer]="!isHandset"></div>
   <div>{{horaFin}}</div>
 </div>
 
-<div class="precio">
-{{precio}}€/Kwh
-</div>
 
