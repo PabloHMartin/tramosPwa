@@ -22,6 +22,11 @@ export class FactsComponent implements OnInit {
 
   constructor() { }
 
+
+  calculoPrecio(potencia: number, precioACtivo: string, minutos: number) {
+   return ((potencia / 1000) * Number(precioACtivo) / 60 ) * minutos;
+  }
+
   ngOnInit() {
   }
 }

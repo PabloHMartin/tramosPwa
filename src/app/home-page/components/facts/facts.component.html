@@ -1,8 +1,11 @@
 <swiper [config]="config">
   <div *ngFor="let fact of facts">
     <mat-card>
-        {{fact.title}}
-      </mat-card>
+        <img src="../../../../assets/img/{{fact.icon}}.svg">
+        <p class="info">
+        {{fact.minutos}} minutos de {{fact.title}} tienen un coste de {{calculoPrecio(fact.potencia, precioACtivo, fact.minutos) | number:'1.2-2'}}
+        </p>
+    </mat-card>
   </div>
 </swiper>
 
