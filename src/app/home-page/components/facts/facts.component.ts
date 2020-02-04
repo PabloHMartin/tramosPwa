@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Fact } from 'src/app/shared/models/models';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 
 @Component({
   selector: 'app-facts',
@@ -11,9 +13,21 @@ export class FactsComponent implements OnInit {
   @Input() facts: Fact[];
   @Input() precioACtivo: string;
 
+  config: SwiperConfigInterface = {
+    speed: 300,
+    spaceBetween: 15,
+    slidesPerView: 2,
+    centeredSlides: true
+  };
+
   constructor() { }
+
+
+  calculoPrecio(potencia: number, precioACtivo: string, minutos: number) {
+   return ((potencia / 1000) * Number(precioACtivo) / 60 ) * minutos;
+  }
 
   ngOnInit() {
   }
-
 }
+

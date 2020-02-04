@@ -9,6 +9,7 @@ export interface Fact {
   icon: string;
   potencia: number;
   title: string;
+  minutos: string;
 }
 
 export interface Tramo {
