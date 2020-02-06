@@ -27,6 +27,9 @@ export class FactsComponent implements OnInit {
     spaceBetween: 15,
     slidesPerView: 3,
     slidesPerColumn: 2,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

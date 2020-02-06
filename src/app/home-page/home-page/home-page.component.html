@@ -1,4 +1,4 @@
-<section class="section" *ngIf="tramoData$ | async as tramoData"
+<section class="section" *ngIf="tramoData$ | async as tramoData; else loading"
          [class.section--mobile]="(isHandset$ | async)"
          [class.section--desktop]="!(isHandset$ | async)"
          [ngClass]="tramoData.tramo.precio">
@@ -17,4 +17,9 @@
     >
       <app-facts  [isHandset]="(isHandset$ | async)" [facts]="tramoData.facts" [precioACtivo]="tramoData.precio.precio"></app-facts>
     </div>
-</section>
+  </section>
+
+
+  <ng-template  #loading>
+    <app-loading></app-loading>
+  </ng-template>
