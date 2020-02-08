@@ -3,7 +3,7 @@
   {{precio}}€/Kwh
   </div>
 
-<div class="horario"
+<div  *ngIf="!inhabil; else nohabil"  class="horario"
      [class.horario--mobile]="isHandset"
      [class.horario--desktop]="!isHandset"
      >
@@ -11,5 +11,12 @@
   <div [class.spacer]="!isHandset"></div>
   <div>{{horaFin}}</div>
 </div>
+
+
+<ng-template #nohabil>
+  <div  class="horario">
+    tramo para todo el día
+  </div>
+</ng-template>
 
 

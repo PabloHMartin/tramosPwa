@@ -13,6 +13,7 @@ export class TramoSubsComponent implements OnInit {
   @Input() horaInicio: any;
   @Input() horaFin: any;
   @Input() isHandset: boolean;
+  @Input() inhabil: boolean;
 
   constructor() { }
 

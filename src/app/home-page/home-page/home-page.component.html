@@ -6,16 +6,21 @@
          [class.info--mobile]="(isHandset$ | async)"
          [class.info--desktop]="!(isHandset$ | async)"
          >
-           <app-tramo-activo [isHandset]="(isHandset$ | async)" [tramoActivo]="tramoData.tramo" ></app-tramo-activo>
-           <app-tramo-subs [isHandset]="(isHandset$ | async)" [precio]="tramoData.precio.precio"
-           [horaInicio]="tramoData.tramo.inicio"
-           [horaFin]="tramoData.tramo.fin"></app-tramo-subs>
+           <app-tramo-activo [isHandset]="(isHandset$ | async)"
+                             [tramoActivo]="tramoData.tramo" ></app-tramo-activo>
+           <app-tramo-subs [isHandset]="(isHandset$ | async)"
+                           [precio]="tramoData.precio.precio"
+                           [horaInicio]="tramoData.tramo.inicio"
+                           [horaFin]="tramoData.tramo.fin"
+                           [inhabil]="tramoData.tramo.inhabil"></app-tramo-subs>
     </div>
     <div class="facts"
          [class.facts--mobile]="(isHandset$ | async)"
          [class.facts--desktop]="!(isHandset$ | async)"
     >
-      <app-facts  [isHandset]="(isHandset$ | async)" [facts]="tramoData.facts" [precioACtivo]="tramoData.precio.precio"></app-facts>
+      <app-facts [isHandset]="(isHandset$ | async)"
+                 [facts]="tramoData.facts"
+                 [precioACtivo]="tramoData.precio.precio"></app-facts>
     </div>
   </section>
 

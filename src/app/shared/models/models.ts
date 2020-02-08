@@ -19,6 +19,7 @@ export interface Tramo {
   fin: string;
   precio: string;
   title: string;
+  inhabil?: boolean;
 }
 
 export interface Precio {
