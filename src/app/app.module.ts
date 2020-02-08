@@ -19,7 +19,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { AngularFireAnalyticsModule, CONFIG, ScreenTrackingService } from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -38,25 +38,19 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SwiperModule,
     SharedModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireAnalyticsModule
   ],
   providers: [
-    ScreenTrackingService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-    },
-     { provide: CONFIG, useValue: {
-      send_page_view: false,
-      allow_ad_personalization_signals: false,
-      anonymize_ip: true
-    } }
+    }
   ],
   bootstrap: [AppComponent]
 })

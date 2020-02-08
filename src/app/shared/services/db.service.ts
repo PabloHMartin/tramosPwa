@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, combineLatest } from 'rxjs';
-import { map, switchMap, filter, debounceTime } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { Precio, Tramo, Fact, TramoPrecioFacts } from '../models/models';
 
 @Injectable({
@@ -12,8 +12,7 @@ export class DbService {
   tramoActivo$ = this.db.collection<Tramo>('tramos', ref => ref.where('activo', '==', true)).valueChanges({idField: 'id'}).pipe(
     map(
       ([tramoActivo]) => tramoActivo
-    ),
-    debounceTime(1500)
+    )
   );
   preciokwh$ = this.db.collection<Precio>('precios').valueChanges({idField: 'id'}).pipe(
     map(
