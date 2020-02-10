@@ -20,7 +20,9 @@
     >
       <app-facts [isHandset]="(isHandset$ | async)"
                  [facts]="tramoData.facts"
-                 [precioACtivo]="tramoData.precio.precio"></app-facts>
+                 [precioACtivo]="tramoData.precio.precio"
+                 [precios]="precios$ | async"></app-facts>
+
     </div>
   </section>
 

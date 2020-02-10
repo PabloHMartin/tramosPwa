@@ -20,6 +20,7 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { InfoDialogComponent } from './home-page/dialogs/info-dialog.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -34,6 +35,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TramoActivoComponent,
     TramoSubsComponent,
     FactsComponent,
+    InfoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [InfoDialogComponent]
 })
 export class AppModule { }

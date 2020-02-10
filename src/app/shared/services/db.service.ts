@@ -15,7 +15,7 @@ export class DbService {
     ),
     debounceTime(300)
   );
-  preciokwh$ = this.db.collection<Precio>('precios').valueChanges({idField: 'id'}).pipe(
+  preciokwh$ = this.db.collection<Precio[]>('precios').valueChanges({idField: 'id'}).pipe(
     map(
       ([precios]) => precios
     )

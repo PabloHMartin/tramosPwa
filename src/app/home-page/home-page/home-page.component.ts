@@ -3,7 +3,7 @@ import { DbService } from 'src/app/shared/services/db.service';
 import { catchError, map, tap } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { of, Observable } from 'rxjs';
-import { TramoPrecioFacts } from 'src/app/shared/models/models';
+import { TramoPrecioFacts, Precio } from 'src/app/shared/models/models';
 
 @Component({
   selector: 'app-home-page',
@@ -17,6 +17,13 @@ export class HomePageComponent implements OnInit {
       return of(null);
     })
   );
+  precios$ = this.db.preciokwh$.pipe<Precio[] & {id: string}>(
+    catchError(error => {
+      return of(null);
+    })
+  );
+
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
