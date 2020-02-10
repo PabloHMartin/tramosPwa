@@ -36,7 +36,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FactsComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
