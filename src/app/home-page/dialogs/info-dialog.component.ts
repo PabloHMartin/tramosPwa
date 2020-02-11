@@ -5,7 +5,7 @@ import { dialogData } from 'src/app/shared/models/models';
 @Component({
   selector: 'app-info-dialog',
   template: `
-  <h1 mat-dialog-title><mat-icon>info</mat-icon>info adicional </h1>
+  <h1 mat-dialog-title><mat-icon>info</mat-icon>&nbsp;info adicional </h1>
   <div class="mat-dialog-content" mat-dialog-content>
       <div>
         <p>estimación basada en {{data.title}} de {{data.potencia}} watios de potencia.</p>
