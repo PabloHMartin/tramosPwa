@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Fact } from 'src/app/shared/models/models';
+import { Fact, Precio } from 'src/app/shared/models/models';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { MatDialog } from '@angular/material/dialog';
+import {InfoDialogComponent} from '../../dialogs/info-dialog.component';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,6 +16,7 @@ export class FactsComponent implements OnInit {
   @Input() facts: Fact[];
   @Input() precioACtivo: string;
   @Input() isHandset: boolean;
+  @Input() precios: Observable<Precio[] & { id: string; }>;
 
   config: SwiperConfigInterface = {
     speed: 300,
@@ -27,13 +31,16 @@ export class FactsComponent implements OnInit {
     spaceBetween: 15,
     slidesPerView: 3,
     slidesPerColumn: 2,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
   };
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
 
   calculoPrecio(potencia: number, precioACtivo: string, minutos: number) {
@@ -41,6 +48,18 @@ export class FactsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openFactDialog(title: string, potencia: number, minutos: number): void {
+    this.dialog.open(InfoDialogComponent, {
+      width: '85vw',
+      data: {
+        title: title,
+        potencia: potencia,
+        minutos: minutos,
+        precios: this.precios
+      }
+    });
   }
 }
 

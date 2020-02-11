@@ -1,18 +1,51 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
+  <mat-sidenav #drawer class="sidenav"
+              [class.sidenav--mobile]='(isHandset$ | async)'
+              [class.sidenav--desktop]='!(isHandset$ | async)' fixedInViewport="true"
+              [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+              [mode]="(isHandset$ | async) ? 'over' : 'side'"
+              [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a class="option" routerLink="pois" matTooltip="Editar POI's" matTooltipPosition="after">
-        <mat-icon>where_to_vote</mat-icon >
+    <mat-nav-list class="mat-nav-list">
+      <a class="mat-nav-list__option" routerLink="pois">
+        <mat-card class="mat-nav-list__mat-card" >
+          <mat-icon class="mat-nav-list__mat-card__mat-icon" >euro_symbol</mat-icon>
+          <mat-card-content class="mat-nav-list__mat-card__mat-card-content">
+            <div class="mat-nav-list__mat-card__mat-card-content__title">Ahorro</div>
+            <div class="mat-nav-list__mat-card__mat-card-content__subtitle">trucos para ahorrar</div>
+          </mat-card-content>
+        </mat-card>
       </a>
-      <a class="option" routerLink="guides" matTooltip="Editar Guías" matTooltipPosition="after">
-        <mat-icon>menu_book</mat-icon>
+      <a class="mat-nav-list__option" routerLink="pois">
+        <mat-card class="mat-nav-list__mat-card" >
+          <mat-icon class="mat-nav-list__mat-card__mat-icon" >show_chart</mat-icon>
+          <mat-card-content class="mat-nav-list__mat-card__mat-card-content">
+            <div class="mat-nav-list__mat-card__mat-card-content__title">Precios hoy</div>
+            <div class="mat-nav-list__mat-card__mat-card-content__subtitle">trucos para ahorrar</div>
+          </mat-card-content>
+        </mat-card>
       </a>
-      <a class="option signout" matTooltip="Logout" matTooltipPosition="after">
-        <mat-icon>logout</mat-icon>
+
+      <a class="mat-nav-list__option" routerLink="pois">
+        <mat-card class="mat-nav-list__mat-card">
+          <mat-icon class="mat-nav-list__mat-card__mat-icon" >eco</mat-icon>
+          <mat-card-content class="mat-nav-list__mat-card__mat-card-content">
+            <div class="mat-nav-list__mat-card__mat-card-content__title">Sostenible</div>
+            <div class="mat-nav-list__mat-card__mat-card-content__subtitle">trucos para ahorrar</div>
+          </mat-card-content>
+        </mat-card>
       </a>
+
+      <a class="mat-nav-list__option" routerLink="pois">
+        <mat-card class="mat-nav-list__mat-card" >
+          <mat-icon class="mat-nav-list__mat-card__mat-icon" >share</mat-icon>
+          <mat-card-content class="mat-nav-list__mat-card__mat-card-content">
+            <div class="mat-nav-list__mat-card__mat-card-content__title">Comparte</div>
+            <div class="mat-nav-list__mat-card__mat-card-content__subtitle">trucos para ahorrar</div>
+          </mat-card-content>
+        </mat-card>
+      </a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

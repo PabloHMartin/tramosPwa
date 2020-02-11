@@ -10,8 +10,12 @@
         <p class="info">
         {{fact.minutos}} minutos de {{fact.title}} tienen un coste de {{calculoPrecio(fact.potencia, precioACtivo, fact.minutos) | number:'1.2-2'}}
         </p>
-    </mat-card
-    >
+        <mat-card-footer class="mat-card__mat-card-footer">
+          <mat-icon class="mat-card__mat-card-footer__mat-icon"
+                    [class.mat-card__mat-card-footer__mat-icon--desktop]="!isHandset"
+                    (click)="openFactDialog(fact.title, fact.potencia, fact.minutos)">info</mat-icon>
+        </mat-card-footer>
+    </mat-card>
   </div>
 </swiper>
     <!-- Add Pagination -->
