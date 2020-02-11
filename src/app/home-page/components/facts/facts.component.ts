@@ -3,6 +3,7 @@ import { Fact, Precio } from 'src/app/shared/models/models';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { MatDialog } from '@angular/material/dialog';
 import {InfoDialogComponent} from '../../dialogs/info-dialog.component';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class FactsComponent implements OnInit {
   @Input() facts: Fact[];
   @Input() precioACtivo: string;
   @Input() isHandset: boolean;
-  @Input() precios: Precio[];
+  @Input() precios: Observable<Precio[] & { id: string; }>;
 
   config: SwiperConfigInterface = {
     speed: 300,

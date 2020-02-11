@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
       return of(null);
     })
   );
-  precios$ = this.db.preciokwh$.pipe<Precio[] & {id: string}>(
+  precios$ = this.db.preciokwh$.pipe<Precio[]>(
     catchError(error => {
       return of(null);
     })

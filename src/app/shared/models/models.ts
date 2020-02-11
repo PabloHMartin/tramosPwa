@@ -1,3 +1,5 @@
+
+
 export interface TramoPrecioFacts {
   tramo: Tramo & { id: string; };
   precio: Precio & { id: string; };
@@ -22,8 +24,18 @@ export interface Tramo {
   inhabil?: boolean;
 }
 
+// tslint:disable-next-line: class-name
+export interface dialogData {
+  title: string;
+  potencia: number;
+  minutos: number;
+  precios: Precio[];
+}
+
 export interface Precio {
   id: string;
   precio: number;
   title: string;
 }
+
+
