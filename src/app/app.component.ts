@@ -6,5 +6,5 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tramosPwa';
+  title = 'Tramos Luz';
 }
